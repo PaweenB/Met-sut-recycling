@@ -1,0 +1,93 @@
+.staffHeader {
+    margin: 120px 0;
+}
+
+.staffRow {
+    margin: 60px 0 0 0;
+    width: 100%;
+}
+
+.iconContainer4 {
+    margin: 0 20px;
+}
+
+.staffImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.staffDesc{
+    margin: -20px 0;
+}
+
+@media screen and (min-width: 0) and (max-width: 400px){
+    
+    .staffHeader {
+        margin: 100px 0;
+    }
+
+    .iconContainer4 {
+        margin: 0 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    .staffName {
+        font-size: 20px;
+    }
+
+    .staffDesc {
+        font-size: 14px;
+    }
+
+    .staffButton{
+        margin: 60px 0;
+    }
+ 
+}
+
+@media screen and (min-width: 401px) and (max-width: 770px){
+    .iconContainer4 {
+        margin: 0 -60px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .staffImg{
+        width: 200px;
+        height: 200px;
+    }
+
+    .staffDesc {
+        margin: 0 -40px -20px;
+    }
+
+    .staffButton{
+        margin: 0 -40px;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 850px){
+
+   .iconContainer4 {
+    margin: 0 -20px;
+   }
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1025px){
+
+    .iconContainer4 {
+        margin: 0 -20px;
+       }
+
+}
+
+@media screen and (min-width: 860px) and (max-width: 900px){
+
+    .iconContainer4 {
+        margin: 0 -60px;
+    }
+}
+

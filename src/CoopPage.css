@@ -1,0 +1,101 @@
+
+.coopRow1 {
+    margin: 60px;
+    text-align: center;
+}
+
+.coopName {
+    color: #1BB39B;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.iconContainer3 {
+    margin: 0 20px;
+}
+
+.coopImage {
+    width: 100%;
+    height: auto;
+    max-height: 350px; 
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+.coopRow2 {
+    margin: 200px 0 0 0;
+    text-align: center;
+}
+
+.carousel-container, .carousel-container2, .carousel-container3 {
+    display: none;
+  }
+  
+
+@media screen and (min-width: 0) and (max-width: 400px){
+
+    .carousel-container, .carousel-container2, .carousel-container3 {
+        width: 100%;
+        display:contents;
+    }
+
+    .pcRow {
+        display: none;
+    }
+
+    .iconContainer3 {
+        margin: 0 -50px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .coopImage{
+        height: 200px;
+    }
+
+    .coopName {
+        margin: 20px 0 -90px -80px;
+        width: 300%;
+    }
+
+    .coopRow2 {
+        margin: 90px 60px 20px ;
+    }
+    
+}
+
+@media screen and (min-width: 401px) and (max-width: 770px){
+    .iconContainer3 {
+        margin: 0 -60px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .coopName {
+        margin: 40px -50px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 850px){
+
+    .iconContainer3 {
+     margin: 0;
+     width: 200px;
+     height: 200px;
+    }
+ }
+
+@media screen and (min-width: 1020px) and (max-width: 1025px){
+
+    .iconContainer3 {
+        margin: 0 -40px;
+    }
+}
+
+@media screen and (min-width: 860px) and (max-width: 900px){
+
+    .iconContainer3 {
+        margin: 0 -70px;
+    }
+}

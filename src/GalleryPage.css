@@ -1,0 +1,140 @@
+.galleryBanner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gImageOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 200px 500px 280px 200px;
+    margin: -20px -80px ;
+  }
+    
+    .goverlayText1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+  
+    .goverlayText2 {
+      font-size: 32px;
+    }
+  
+
+.galleryImg {
+    border: 1px solid black;
+    padding: 80px;
+    background-color: black;
+    color: white;
+    font-size: 60px;
+}
+
+.imgName {
+    margin: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.imgButton {
+    background-color: #1BB39B;
+    color: white;
+    margin-left: 80px;
+    margin: 190px 0 0 -232px;
+}
+
+
+
+@media screen and (min-width: 0) and (max-width: 400px){
+
+    .galleryBanner{
+        height: 50vh;
+    }
+
+    .gImageOverlay {
+        padding: 80px 200px 30px 100px;
+        margin: 0 -80px;
+    }
+
+    .goverlayText1 {
+        font-size: 30px;
+    }
+
+    .goverlayText2 {
+        font-size: 25px;
+    }
+    
+    .galleryImg {
+        margin:  2px -60px;
+        padding: 50px;
+    }
+
+    .imgName {
+        margin: 0 70px;
+        width: 70%;
+        font-size: 15px;
+    }
+
+    .imgButton {
+        margin-left: 80px;
+        margin: 190px 0 0 -200px;
+    }
+    
+}
+
+@media screen and (min-width: 401px) and (max-width: 770px){
+
+    .galleryBanner{
+        height: 40vh;
+    }
+
+    .gImageOverlay {
+        padding: 50px 50px 100px 100px;
+        margin: -10px -50px;
+        width: 100%;
+    }
+    
+    .goverlayText1 {
+        font-size: 40px;
+    }
+
+    .goverlayText2 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 850px){
+
+    .gImageOverlay {
+        margin: 0px -50px 0;
+        padding: 250px 160px 230px 0;
+      }
+  
+      .goverlayText1 {
+        font-size: 40px;
+        
+      }
+  
+      .goverlayText2 {
+        font-size: 30px;
+      }
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1025px){
+    
+    .gImageOverlay {
+        margin: 0px -90px 0;
+        padding: 110px 190px 100px 150px;
+      }
+
+}
+
+@media screen and (min-width: 860px) and (max-width: 900px){
+
+    .gImageOverlay {
+        margin: 0 -50px;
+        padding: 100px 160px 50px 60px;
+    }
+}

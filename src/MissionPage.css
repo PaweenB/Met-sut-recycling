@@ -1,0 +1,14 @@
+.missionList {
+    color: #1bb39b;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100vw;
+}
+
+@media screen and (max-width: 400px){
+    
+    .missionList {
+        font-size: 20px;
+    }   
+}
+

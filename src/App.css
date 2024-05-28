@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, option {
+  font-family: 'Bai Jamjuree', sans-serif !important;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  padding: 0 1px;
+  width: 100%;
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.firstWord {
+  color: black;
+  background-color: white;
+  margin: 0 20px;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.desktop-menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.Menu {
+  font-size: 16px;
+  background-color: black; 
+  width: 100%;
+}
+
+.Menu .ant-menu-item {
+  padding: 10px 43px;
+  border-right: 1px solid white;
+  font-size: 16px;
+}
+
+.content-container {
+  width: 100vw;
+}
+
+.footerBlock {
+  background-color: black;
+  display: flex;
+  text-align: center;
+}
+
+.footerHead {
+  color: #1BB39B;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 100px 220px;
+}
+
+.footerContent {
+  color: white;
+  font-size: 16px;
+  margin: 50px 0 0;
+}
+
+.content-container[data-page="Mission"] {
+  height: 70vh;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .Header {
+    background-color: white ;
+  }
+
+  .firstWord {
+    margin:  0 20px;
+    background-color: white ;
+  }
+ 
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    margin-left: auto;
+    background-color: white;
+  }
+  .Menu .ant-menu-item {
+    padding: 6px;
+    font-size: 7px;
+    background-color: white;
+    
+  }
+  .Menu {
+    font-size: 3px;
+    background-color: white;
+  }
+  .footerHead {
+    margin: 70px 20px 0;
+  }
+  .footerContent {
+    font-size: 13px;
+    width: 100%;
+  }
+  .content-container[data-page="Home"] {
+    height: 630vh;
+  }
+  .content-container[data-page="Mission"] {
+    height: 100vh;
+  }
+  .content-container[data-page="Coop"] {
+    height: 130vh;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 770px) {
+  .firstWord{
+    margin: 9px;
+  }
+
+  .Menu .ant-menu-item {
+    padding: 6px;
+    font-size: 14px;
+  }
+  .Menu {
+    font-size: 15px;
+  }
+  .content-container[data-page="Home"] {
+    height: 550vh;
+  }
+  .content-container[data-page="Mission"] {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 850px) {
+  .content-container[data-page="Mission"] {
+    height: 150vh;
+  }
+  .Menu .ant-menu-item {
+    padding: 6px;
+    font-size: 16px;
+  }
+  .Menu {
+    font-size: 16px;
+  }
+  .content-container[data-page="Home"] {
+    height: 1400vh;
+  }
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1025px) {
+  .Menu .ant-menu-item {
+    padding: 6px;
+    font-size: 20px;
+  }
+  .Menu {
+    font-size: 20px;
+  }
+  .content-container[data-page="Mission"] {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1430px) and (max-width: 1440px) {
+  .content-container[data-page="Home"] {
+    height: 550vh;
+  }
+  .content-container[data-page="Mission"] {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 860px) and (max-width: 900px) {
+  .Menu .ant-menu-item {
+    padding: 4px;
+    font-size: 20px;
+  }
+  .Menu {
+    font-size: 14px;
+  }
+  .content-container[data-page="Home"] {
+    height: 410vh;
+  }
+  .content-container[data-page="Mission"] {
+    height: 80vh;
+  }
+}

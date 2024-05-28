@@ -1,0 +1,702 @@
+.HomeContent {
+  margin: 70px 0;
+}
+
+.firstImage {
+  width: 100%;
+}
+
+.servicesImageContainer {
+  width: 100%;
+  position: relative;
+}
+  
+.imageOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 220px 500px 180px 200px;
+  margin: 0px -80px ;
+}
+  
+  .overlayText1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .overlayText2 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .overlayButton {
+    background-color: #1BB39B;
+    margin: 50px 0 0 0 ;
+
+  }
+
+  .HeadWord, .staffHeadword, .abUsHeadWord, .orgHeadWord, .actHead, .workHead, .homeGallHead {
+    font-size: 32px;
+    color: #1bb39b;
+    font-weight: bold;
+  }
+
+  .orgHeadWord {
+    margin: 90px 80px;
+  }
+  
+  .headUnderLine {
+    border-bottom: 4px solid #1BB39B;
+    width: 80px;
+    margin: 10px 0;
+  }
+
+  .container {
+    margin: 0 90px 80px ;
+  }
+
+  .containerUnderline, .containerUnderline2 {
+    border-bottom: 1px solid #1BB39B;
+    width: 1221px;
+    margin: 150px 250px;
+  }
+
+  .iconContainer, .iconContainer3, .iconContainer4 {
+    display: grid;
+    place-items: center;
+    background-color: #000; 
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px; 
+    color: white;
+    font-size: 70px;
+    margin: 0 70px;
+    
+  }
+
+  .iconContainer{
+    width: 250px; 
+    height: 250px; 
+  }
+
+  .servicesOverlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 24px;
+    width: 100%;
+    margin: -5px 0;
+  }
+
+  .hCoopImage{
+    width: 100%;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  .organized {
+    color: #1BB39B;
+    font-size: 20px;
+    margin: 20px 0 0 50px;
+  }
+
+  .serviceImg {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .staffHeadword {
+    margin: 100px 80px;
+  }
+  
+  .mission {
+    font-size: '16px';
+    margin: 20px 100px 0 ;
+  }
+
+  .service {
+    font-size: 32px; 
+    font-weight: bold; 
+    margin: 0 100px;
+  }
+
+  .serviceButton {
+    background-color: white;
+    margin-top: 50px;
+    margin: 0 0 0 250px;
+    padding: 25px 55px 35px;
+    color: #1BB39B;
+  }
+
+  .staffName {
+    color: #1BB39B; 
+    font-size: 20px ; 
+    padding: 20px 0 ;
+  }
+
+  .staffDesc {
+    font-size: 14px;
+    font-weight: bold;
+
+  }
+
+  .staffRole {
+    font-size: 14px;
+    padding: 20px 0;
+  }
+
+  .hStaffImg {
+    color: white; 
+    font-size: 70px;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
+
+  .hStaffButton {
+    background-color: #1BB39B;
+    padding:15px 35px 25px ;
+    color:white;
+  }
+
+  .abUsHeadWord {
+    margin: 20px 0 0 145px;
+  }
+
+  .playCircle {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    width: 45vw;
+    margin: 20px;
+    font-size: 80px;
+  }
+
+  .abUsContent {
+    margin: 20px 150px;
+    width: 100%;
+  }
+
+  .abUsButton {
+    background-color: #1BB39B;
+    margin-top: 50px;
+    margin: 40px 150px;
+    padding: 20px 40px 35px;
+  }
+
+  .actHead , .workHead, .homeGallHead {
+    margin: 10px 0px 0 80px;
+  }
+
+  .homeDate {
+    margin: 50px 10px 0 80px ;
+    display: flex;
+  }
+
+  .date {
+    border: 3px solid #1BB39B;
+    width: 30vw;
+    height: 15vh;
+    color: #1BB39B;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .picName {
+    margin: 0 50px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .calendar {
+    margin: 50px 10px 0 80px;
+  }
+
+  .workName {
+    color: black;
+    font-size: 16px;
+  }
+
+  .gallImg {
+    margin: 50px 10px 0 80px;
+    display: flex;
+  }
+
+  .picIcon {
+    border: 35px solid black;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+  }
+
+  .gallName {
+    margin: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .gallCalendar {
+    font-size: 14px;
+    color: #1BB39B;
+  }
+
+  @media screen and (max-width: 400px){
+
+    .firstImage {
+      height: 40vh;
+      width: 100vw;
+    }
+    
+    .imageOverlay {
+      padding: 20px 50px 30px 190px;
+      margin: -10px 0 0 -90px;
+    }
+
+    .overlayText1 {
+      font-size: 20px;
+      margin: 0px -80px;
+      width: 100%;
+    }
+
+    .overlayText2 {
+      font-size: 15px;
+      margin: 30px -80px;
+    }
+
+    .overlayButton {
+      margin: 0 -80px;
+    }
+
+    .hCoopImage {
+      height: 200px;
+      width: 200px;
+    }
+
+    .orgHeadWord {
+      margin: 100px 20px 40px ;
+    }
+
+    .organized {
+      width: 100%;
+      margin: 50px 0 -60px;
+      text-align: center;
+    }
+
+    .iconContainer, .iconContainer3, .iconContainer4 {
+      width: 100px; 
+      height: 100px; 
+      font-size: 40px;
+      margin: 0 -70px ;
+    }
+
+    .containerUnderline {
+      border-bottom: 1px solid #1BB39B;
+      width: 1221px;
+      margin: 100px 120px;
+    }
+
+    .containerUnderline2 {
+      margin:  100px 80px;
+    }
+
+    .serviceImg {
+      height: 200px;
+    }
+
+    .servicesOverlay {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      width: 100%;
+      margin: 0 5px ;
+      height: 100%;
+    }
+ 
+    .mission {
+      margin: 5px 15px;
+    }
+
+    .service {
+      font-size: 22px;
+      margin: 9px 15px ;
+    }
+
+    .serviceButton {
+      margin: 50px 0;
+      padding: 0;
+    }
+
+    .carousel-container3 {
+      width: 100%; 
+      overflow: hidden; 
+    }
+    
+    .staffHeadword {
+      margin: -80px 40px 0  ;
+      width: 100%;
+      font-size: 30px;
+    }
+
+    .hStaffImg {
+      max-height: 200px;
+      width: 200px;
+    }
+
+    .staffRole{
+      margin-bottom: -60px;
+    }
+
+    .hStaffButton {
+      padding:10px 10px 25px ;
+      margin: 0 90px ;
+      font-size: 10px;
+    }
+
+    .playCircle {
+      margin-top: 100px;
+      width: 90vw;
+      height: 40vh;
+    }
+
+    .abUsHeadWord {
+      margin: 20px 40px 20px;
+      width: 100%;
+    }
+
+    .abUsContent {
+      margin: 20px 50px ;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; 
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .abUsButton {
+      margin: 20px 50px 0;
+      padding: 15px 30px 25px;
+    }
+
+    .containerUnderline2 {
+      margin: 70px 0 70px 90px;
+      width: 200px;
+    }
+
+    .actHead, .workHead, .homeGallHead {
+      margin: 10px 0 0 20px; 
+    }
+  
+    .homeDate, .calendar, .gallImg {
+      margin: 20px 30px ;
+    }
+  
+    .date {
+      width: 150px; 
+      height: fit-content;
+      border-width: 2px; 
+    }
+
+    .hActButton {
+      background-color: #1BB39B;
+      margin-top: 20px;
+    }
+    
+    .gallImg {
+      margin-top: 60px;
+    } 
+  }  
+
+  @media screen and (min-width: 401px) and (max-width: 770px){
+
+    .organized {
+      font-size: 19px;
+      position:initial;
+      margin: 0 -30px;
+      width: 150%;
+    }
+
+    .iconContainer {
+      width: 175px; 
+      height: 175px; 
+      font-size: 40px;
+      margin: 0 -60px;
+    }
+
+    .hCoopImage{
+      height: 175px;
+      width: 175px;
+    }
+
+    .containerUnderline2 {
+      margin:  100px 90px;
+    }
+
+    .imageOverlay {
+      padding: 85px 200px 30px 200px;
+      margin: 0 0 0 -50px;
+    }
+
+    .overlayText1 {
+      font-size: 30px;
+      margin: 0 -80px;
+    }
+
+    .overlayText2 {
+      font-size: 25px;
+      margin: 40px -80px;
+    }
+
+    .overlayButton {
+      margin: 0 -80px;
+    }
+
+    .servicesOverlay {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      margin: -5px ;
+      height: 100%;
+    }
+    
+    .mission {
+      margin: 5px 15px;
+    }
+
+    .service {
+      font-size: 25px;
+      margin: 9px 15px ;
+    }
+
+    .serviceButton {
+      margin: 20px 0;
+    }
+
+    .hStaffImg{
+      width: 200px;
+      height: 200px;
+    }
+
+    .staffName {
+      color: #1BB39B; 
+      font-size: 20px ; 
+      margin: 0 -40px -30px;
+    }
+    
+     .staffRole,.hStaffDesc {
+      margin: 0 -40px -20px;
+    }
+
+    .hStaffButton{
+      margin: 10px -40px;
+    }
+
+    .containerUnderline2 {
+      width: 300px;
+      margin: 50px 0 50px 200px;
+    }
+
+    .playCircle {
+      width: 119%;
+      height: 50vh;
+    }
+
+    .abUsHeadWord {
+      margin: 0 30px;
+    }
+
+    .abUsContent {
+      margin: 40px 50px;
+    }
+
+    .abUsButton {
+      margin: 0 50px;
+    }
+
+  } 
+
+  @media screen and (min-width: 800px) and (max-width: 850px){
+    .HomeContent {
+      margin: 70px 0;
+    }
+
+    .imageOverlay {
+      margin: 160px -50px 0;
+      padding: 250px 160px 190px 0;
+    }
+
+    .overlayText1 {
+      font-size: 40px;
+      
+    }
+
+    .overlayText2 {
+      font-size: 30px;
+    }
+
+    .orgHeadWord{
+      margin:500px 80px 0 ;
+    }
+    
+    .iconContainer {
+      
+      width: 200px;
+      height: 200px;
+    }
+
+    .container {
+      margin: 0 20px 0 20px;
+    }
+
+    .serviceImg {
+      height: 200px;
+      width: 100%;
+    }
+
+    .servicesOverlay {
+      padding: 20px ;
+    }
+
+    .iconContainer {
+      margin: 40px 0;
+    }
+
+    .organized {
+      margin: 0;
+    }
+
+    .mission {
+      font-size: 15px;
+      margin: 0 20px;
+    }
+
+    .service {
+      font-size: 25px;
+      margin: 20px;
+    }
+
+    .hStaffImg {
+      margin: 0px;
+    }
+
+    .serviceButton {
+      margin: 40px 0 0 250px ;
+    }
+
+    .iconContainer2 {
+      margin: 0 -20px;
+    }
+
+    .playCircle {
+      margin: 40px 20px;
+    }
+
+    .abUsHeadWord {
+      margin: 40px 0 0 145px ;
+      width: 100%;
+    }
+
+  }
+
+  @media screen and (min-width: 1020px) and (max-width: 1025px){
+
+    .imageOverlay{
+      padding: 160px 500px 20px 200px;
+    }
+
+    .iconContainer {
+      margin: 0 -30px;
+    }
+
+    .organized {
+      margin: 30px 0 0 22px;
+    }
+
+    .serviceImg {
+      width: 84vw;
+    }
+
+    .servicesOverlay {
+      padding: 0px 0px 0px;
+    }
+
+    .service {
+      font-size: 25px;
+    }
+
+    .serviceButton {
+      margin: 10px 30px 0 250px ;
+
+    }
+
+    .iconContainer2 {
+      margin: 0 -40px;
+    }
+
+    .containerUnderline2 {
+      margin: 100px 0 100px 200px;
+    }
+
+    .date {
+      height: 150px;
+    }
+  }
+
+  @media screen and (min-width: 860px) and (max-width: 900px){
+
+    .imageOverlay{
+      padding: 160px 0px 170px 200px;
+      margin: -400px -80px;
+    }
+
+    .orgHeadWord {
+      margin: -500px 30px 0;
+    }
+
+    .iconContainer {
+      margin: 0 -50px ;
+      width: 200px;
+      height: 200px;
+    }
+
+    .organized {
+      margin: 20px 0 0 -5px ;
+      width: 100%;
+    }
+
+    .servicesOverlay {
+      height: 100%;
+    }
+
+    .mission {
+      margin: 60px 0 0 0;
+    }
+
+    .service {
+      margin:  0px 0 0 0;
+    }
+
+    .serviceButton {
+      margin:  10px 0;
+    }
+
+    .iconContainer2 {
+      margin: 0 -70px;
+    }
+   
+
+  }
+  
+  
