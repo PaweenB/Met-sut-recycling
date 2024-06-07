@@ -1,0 +1,107 @@
+p {
+    font-weight: 700;
+    color: #707070;
+}
+
+.addMissionContainer {
+    background-color: white;
+    display: flex;
+    color: black;
+    width: 100vw;
+    height: 100vh; 
+}
+
+.addMissionContent {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addMissionHead {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.missionUnderLine {
+    border-bottom: 1px solid #7F8698;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.addMissionForm {
+    display: flex;
+    flex-direction: column;
+    width: 626px;
+}
+
+.formHead {
+    margin-top: 20px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.addMissionInput {
+    background-color: white;
+    color: #707070;
+    width: 100%;
+    height: 45px;
+}
+
+.addMissionButton {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+.cButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .cButtonContainer button {
+    border-radius: 5px; 
+    margin-left: 10px; 
+  }
+
+.imagePreviewContainer {
+    width: 200px; 
+    height: 200px; 
+    border: 2px solid #ddd; 
+    border-radius: 5px; 
+    overflow: hidden;
+  }
+
+  .circularFrame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .uploadIcon {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .previewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .circularFrame:hover {
+    border-color: #1bb39b;
+  }

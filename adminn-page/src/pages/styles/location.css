@@ -1,0 +1,41 @@
+.locContainer {
+    display: flex;
+  height: 100%;
+  width: 100vw;
+  background-color: white;
+}
+
+.locContent{
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.locInputHead{
+    color: #707070;
+  size: 16px;
+  font-weight: 700;
+  display: block;
+    
+}
+
+.locInput{
+    background-color: white;
+    color: #000;
+    width: 626px;
+    height: 45px;
+    margin-top: 20px;   
+    border-radius:8px ;
+    margin-bottom: 30px;
+}
+
+.bigLocInput {
+    background-color: white;
+    color: #000;  
+    width: 626px;
+    height: 339px;
+    margin-top: 20px;   
+    border-radius:8px ;
+    margin-bottom: 30px;
+}

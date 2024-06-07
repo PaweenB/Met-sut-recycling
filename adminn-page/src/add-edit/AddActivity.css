@@ -1,0 +1,32 @@
+.cancleButton {
+    background-color: white;
+    color: #1BB39B;
+    border-color: #1BB39B;
+    
+}
+
+.actSubmitButton {
+    margin-left: auto;
+    background-color: #1BB39B;
+    margin-right: 30px;
+}
+
+.imagePreview img {
+    max-width: 100%;
+    max-height: 200px;
+  }
+
+  .imageContainer {
+    width: 200px; 
+    height: 200px; 
+    border: 2px solid #ddd; 
+    overflow: hidden; 
+    margin-bottom: 10px; 
+  }
+  
+  .uploadedImage {
+    width: 100%; 
+    display: block; 
+  }
+
+ 

@@ -1,0 +1,36 @@
+.gallContainer {
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    background-color: white;
+  }
+
+  .gAddButton {
+    width: fit-content;
+    height: fit-content;
+    display: flex ;
+    align-items: flex-end ;
+    margin-left: auto;
+    background-color: #1BB39B;
+    color: white;
+  }
+
+  .datePicker {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .react-datepicker__input-container input {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .react-datepicker {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

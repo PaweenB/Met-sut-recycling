@@ -1,0 +1,44 @@
+.appContent {
+  width: 100%;
+  height: 100%;
+}
+
+.logInBanner {
+  width: 200%;
+  height: 100%;
+  filter: blur(5px);
+  opacity: 0.3; /* ค่าที่ต่ำกว่า 1 จะทำให้ภาพเป็นสีจางลง */
+  background-color: white; 
+}
+
+.logInCol {
+  text-align: center;
+  background-color: white;
+}
+
+.logInHead {
+  margin-top: 224px;
+  font-size: 36px;
+  color: #7F8698;
+}
+
+.logInForm {
+  margin: 0 110px ;
+  font-size: 24px;
+}
+
+.passwordForm, .ant-input {
+  font-size: 24px;
+}
+.logInUnderLine {
+  border-bottom: 1px solid #7F8698;
+  width: 536px;
+  margin: 60px 110px 20px;
+}
+
+.logInButton {
+  width: 536px;
+  height: 77px;
+  border-radius: 8px;
+  background-color: #273B4A;
+}

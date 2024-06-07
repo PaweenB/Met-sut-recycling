@@ -1,0 +1,248 @@
+.coopContainer {
+  display: flex;
+  background-color: white;;
+  height: 100%;
+  width: 100vw;
+}
+
+.coopData {
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    display:block;
+}
+
+.coopUnderLine {
+  height: 1px;
+  background-color: black;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+  .coopHead {
+    color: #7F8698;
+    margin-left: 130px;
+  }
+
+  .cAddButton {
+    width: fit-content;
+    height: fit-content;
+    display: flex ;
+    align-items: flex-end ;
+    margin-left: auto;
+    background-color: #1BB39B;
+  }
+  .uploadImg{
+    margin: 30px 0 20px 80px;
+  }
+
+  .deleteButton {
+     margin: 0 0 0 0px;
+     padding:10px 10px;
+  }
+
+  .returnButton {
+    margin-top: 60px;
+  }
+
+.missionTable img {
+  width: 100px;
+  height: 100px;
+  }
+
+.image-input {
+  display: block;
+  margin: 0 auto;
+}
+
+.image-preview {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.deleteModal {
+  position: fixed;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+  background: none; 
+  
+}
+
+.deleteModalContent {
+  background-color: white; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.deleteModalButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.deleteModalButtons button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteModalButtons button:first-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteModalButtons button:last-child {
+  background-color: #ddd;
+  color: #333;
+}
+
+
+  @media screen and (min-width: 0) and (max-width: 400px){
+    
+    .coopContent{
+      width: 100%;
+      margin: 0;
+    }
+
+    .coopHead {
+      width: 80%;
+      margin-left: -50px;
+    }
+
+    .coopForm{
+      width: 100%;
+      margin: 0 -60px;
+    }
+
+    .coopData {
+      width: 100%;
+      display: block;
+      margin: 0 -80px;
+    }
+
+    .coopNameForm{
+      margin: 0 0 30px -50px;
+    }
+
+    .uploadImg {
+      margin: 0 0 30px 30px;
+    }
+
+    .coopSubmit{
+      margin: 0 0 0 -60px;
+    }
+
+    .coopListHead{
+      margin: 30px 0 40px -170px
+    }
+
+    .deleteButton{
+      margin: -30px 0;
+    }
+
+    .returnButton{
+      margin-left: -130px;
+    }
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 770px){
+    .coopContent{
+      width: 100%;
+      margin: 0;
+    }
+
+    .coopHead{
+      width: 90%;
+      margin-left: -50px;
+    }
+
+    .coopForm{
+      margin-left: -180px;
+    }
+
+    .uploadImg{
+      margin: 20px 0 0 90px;
+    }
+
+    .coopListHead, .coopData{
+      margin-left: -90px;
+      width: 100%;
+    }
+
+    .returnButton{
+      margin-left: -150px;
+    }
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 850px){
+    .coopContent{
+
+      width: 100%;
+      margin: 0;
+    }
+
+    .coopHead{
+      margin-left: -80px;
+      width: 100vw;
+    }
+
+    .coopNameForm, .uploadImg{
+      margin-right: 160px;
+    }
+
+    .coopListHead{
+      margin-right: 150px;
+    }
+
+    .coopData{
+      margin-right: 150px;
+    }
+
+    .returnButton{
+      margin-left: 30px;
+    }
+
+  }
+
+  @media screen and (min-width: 1020px) and (max-width: 1025px){
+    .coopContent{
+      width: 100%;
+      margin: 0;
+      height: 100%;
+    } 
+
+    .coopHead{
+      margin-right: 170px ;
+    }
+
+    .coopNameForm, .uploadImg{
+      margin-right: 160px;
+    }
+
+    .coopListHead{
+      margin-right: 150px;
+    }
+
+    .coopData{
+      margin-right: 150px;
+    }
+
+    .returnButton{
+      margin-left: 30px;
+    }
+
+  }

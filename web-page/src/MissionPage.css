@@ -5,6 +5,29 @@
     width: 100vw;
 }
 
+.missionList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .missionList li {
+    margin: 10px 30px;
+    font-size: 18px;
+    position: relative;
+  }
+
+  .missionList li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+  }
+
 @media screen and (max-width: 400px){
     
     .missionList {

@@ -1,0 +1,119 @@
+.aboutContainer {
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    background-color: white;
+}
+
+.missionContent {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadLabel {
+    display: block;
+    color: #7F8698;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.aboutContent1, .aboutContent2, .aboutContent3 {
+    display: flex;
+    padding: 20px;
+}
+
+.uploadSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadBox {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #7F8698;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.uploadBox input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.uploadBox::before {
+    content: 'อัพโหลดรูป';
+    color: #7F8698;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.uploadBox.withPreview::before {
+    content: '';
+}
+
+.formSection, .formSection2 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.formSection2 {
+    margin-left: 440px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    color: #7F8698;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.formGroup input {
+    width: 626px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+
+.bigForm {
+    height: 339px;
+}
+
+.abSubmitButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.abSubmitButton {
+    background-color: #1BB39B;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 105px;
+    height: 39px;
+}
+
+.imagePreview {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

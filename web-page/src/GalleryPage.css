@@ -26,10 +26,11 @@
 
 .galleryImg {
     border: 1px solid black;
-    padding: 80px;
     background-color: black;
     color: white;
     font-size: 60px;
+    width: 20vw;
+    height: 40vh;
 }
 
 .imgName {
@@ -42,7 +43,7 @@
     background-color: #1BB39B;
     color: white;
     margin-left: 80px;
-    margin: 190px 0 0 -232px;
+    margin: 190px 0 0 -112px;
 }
 
 

@@ -93,6 +93,10 @@
     margin: -5px 0;
   }
 
+  .hCoopData {
+    width: 120%;
+  }
+
   .hCoopImage{
     width: 100%;
     height: 250px;
@@ -196,27 +200,32 @@
     margin: 10px 0px 0 80px;
   }
 
-  .homeDate {
-    margin: 50px 10px 0 80px ;
+  .hActivity{
     display: flex;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 80px;
   }
 
-  .date {
+  .hDateMonth {
     border: 3px solid #1BB39B;
-    width: 30vw;
     height: 15vh;
     color: #1BB39B;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    width: 20%;
+  }
+
+  .hActButton{
+    background-color: #1BB39B;
+    margin: 20px 0;
   }
   
-  .picName {
-    margin: 0 50px;
-    font-size: 16px;
-    font-weight: bold;
+  .homeWork{
+    margin-left: -80px;
   }
-  
+
   .calendar {
     margin: 50px 10px 0 80px;
   }
@@ -226,28 +235,15 @@
     font-size: 16px;
   }
 
-  .gallImg {
-    margin: 50px 10px 0 80px;
-    display: flex;
-  }
-
-  .picIcon {
-    border: 35px solid black;
-    background-color: black;
+  .hImgButton {
+    background-color: #1BB39B;
     color: white;
-    font-size: 25px;
+    margin-left: 80px;
+    margin: 120px 0 0 -112px;
   }
 
-  .gallName {
-    margin: 0 30px;
-    font-size: 16px;
-    font-weight: bold;
-  }
 
-  .gallCalendar {
-    font-size: 14px;
-    color: #1BB39B;
-  }
+
 
   @media screen and (max-width: 400px){
 

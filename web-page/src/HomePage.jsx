@@ -3,30 +3,46 @@ import { Row, Col, Button } from 'antd';
 import { PictureOutlined, PlayCircleOutlined, CalendarOutlined } from '@ant-design/icons';
 import './HomePage.css';
 import './App.css';
-import { collection, getDocs } from "firebase/firestore";
-import { db } from './firebase';
+import { collection, getDocs, doc, getDoc, onSnapshot } from "firebase/firestore";
+import { getDownloadURL , ref} from 'firebase/storage';
+import { db, storage } from './firebase';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const HomePage = () => {
 
-  const [hCoops, setHCoops] = useState([]);
+  const [coops, setCoops] = useState([]);
   const [staffs, setStaffs] = useState([]);
+  const [activities, setActivities] = useState([]);
+  const [gallery, setGallery] = useState([]);
+  const [uploadedImages, setUploadedImages] = useState([]);
+  const [aboutData, setAboutData] = useState({
+      logoURL: '',
+      orgNameEn: '',
+      orgNameTh: '',
+      history: '',
+      video: '',
+      videoName: '',
+      videoDescription: '',
+      objective: '',
+    });
 
-  const fetchHCoops = async () => {
+  const fetchCoops = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, "hcoops"));
-      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      setHCoops(newData);
-      console.log(newData);
+        const querySnapshot = await getDocs(collection(db, "coops"));
+        const newData = querySnapshot.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id
+        }));
+        setCoops(newData);
+        console.log(newData);
     } catch (e) {
-      console.error("Error fetching documents: ", e);
+        console.error("Error fetching documents: ", e);
     }
-  };
-
+  }
   useEffect(() => {
-    fetchHCoops();
+    fetchCoops();
   }, []);
 
   const fetchStaffs = async () => {
@@ -45,6 +61,86 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchStaffs();
+  }, []);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const docRef = doc(db, 'about', 'information');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setAboutData(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching document: ", error);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await onSnapshot(collection(db, 'activities'), (snapshot) => {
+          const activitiesData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          setActivities(activitiesData);
+        });
+        return querySnapshot;
+      } catch (error) {
+        console.error('Error fetching activities:', error);
+      }
+    };
+
+    const fetchImages = async () => {
+      try {
+        const imageDocRef = doc(db, 'actimage', 'uniqueId');
+        const imageDocSnapshot = await getDoc(imageDocRef);
+
+        if (imageDocSnapshot.exists()) {
+          const imageUrl = imageDocSnapshot.data().url;
+          setUploadedImages([imageUrl]);
+        } else {
+          console.log('No image found in actimage document with uniqueId');
+        }
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+    };
+
+    fetchData();
+    fetchImages();
+  }, []);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('th-TH', options).replace(/(\d+)\s(\w+)\s(\d+)/, '$1 $2 $3');
+    const [day, monthYear] = formattedDate.split(' ');
+    return { day, monthYear: monthYear.replace(/\s+/g, ' ') };
+  };
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const unsubscribe = onSnapshot(collection(db, 'gallery'), async (snapshot) => {
+          const imageData = await Promise.all(snapshot.docs.map(async (doc) => {
+            const data = doc.data();
+            const imageUrl = await getDownloadURL(ref(storage, data.imageUrl));
+            return { id: doc.id, ...data, imageUrl };
+          }));
+          setGallery(imageData);
+        });
+        return unsubscribe;
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    };
+
+    fetchGallery();
   }, []);
 
   return (
@@ -68,16 +164,15 @@ const HomePage = () => {
 
         <div className='pcRow'>
           <Row style={{ textAlign: 'center', width: '100%' }}>
-            {hCoops.map((coop, index) => (
+            {coops.slice(0, 3).map((coop, index) => (
               <Col span={8} key={index}>
                 <div className="container">
                   <div className="iconContainer">
-                    {coop.imageUrl ? <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} /> : <PictureOutlined />}
+                  {coop.imageUrl && <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} />}
                   </div>
                   <div className='organized'>
-                    <div className="coopData">
+                    <div className="hCoopData">
                       <p>{coop.name}</p>
-                      <p style={{ color: 'black' }}>{coop.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -87,14 +182,14 @@ const HomePage = () => {
         </div>
 
         <div className="carousel-container">
-          <Slider dots={true} infinite={hCoops.length > 1} speed={500} slidesToShow={1} slidesToScroll={1}>
-            {hCoops.map((coop, index) => (
+          <Slider dots={true} infinite={coops.length > 1} speed={500} slidesToShow={1} slidesToScroll={1}>
+            {coops.map((coop, index) => (
               <div key={index}>
                 <Row className='coopRow1'>
                   <Col span={24}>
                     <div className="container">
                       <div className="iconContainer3">
-                        {coop.imageUrl ? <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} /> : <PictureOutlined />}
+                        {coop.imageUrl && <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} />}
                       </div>
                       <div className='organized'>
                         <div className="coopData">
@@ -108,7 +203,7 @@ const HomePage = () => {
               </div>
             ))}
           </Slider>
-        </div>
+        </div>  
 
         <Row style={{ margin: '90px 0' }}>
           <Col span={2}></Col>
@@ -137,7 +232,7 @@ const HomePage = () => {
         </div>
         <div className='pcRow'>
           <Row>
-            {staffs.map((staff, index) => (
+            {staffs.slice(0, 3).map((staff, index) => (
               <Col span={8} key={index}>
                 <div className="container">
                   <div className="iconContainer4">
@@ -205,19 +300,8 @@ const HomePage = () => {
               ประวัติความเป็นมา
               <div className='headUnderLine'></div>
             </p>
-
             <div className='abUsContent'>
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-            </div>
-            <div className='abUsContent'>
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
-              ประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมาประวัติความเป็นมา
+              {aboutData.history }
             </div>
 
             <Button type="primary" className='abUsButton'>{'ดูเพิ่มเติม >'}</Button>
@@ -231,36 +315,28 @@ const HomePage = () => {
               | กิจกรรม
             </p>
             <div>
-              <div className='homeDate'>
-                <div className='date'>
-                  10<br />
-                  <span style={{ fontSize: '14px' }}>ส.ค. 2567</span>
+            {activities.slice(0, 3).map((activity) => {
+            const { day, monthYear } = formatDate(activity.date);
+            return (
+              <div key={activity.id} className='hActivity'>
+                <div className='hDateMonth'>
+                  {day}<br />
+                  <span style={{ fontSize: '14px' }}>{monthYear}</span>
                 </div>
-                <div className='picName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                  ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม
-                  <Button type="primary" className='hActButton'>{'ดูเพิ่มเติม >'}</Button>
-                </div>
-              </div>
-              <div className='homeDate'>
-                <div className='date'>
-                  27<br />
-                  <span style={{ fontSize: '14px' }}>ส.ค. 2567</span>
-                </div>
-                <div className='picName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                  ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม
-                  <Button type="primary" className='hActButton'>{'ดูเพิ่มเติม >'}</Button>
-                </div>
-              </div>
-              <div className='homeDate'>
-                <div className='date'>
-                  30<br />
-                  <span style={{ fontSize: '14px' }}>ส.ค. 2567</span>
-                </div>
-                <div className='picName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                  ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม ชื่อกิจกรรม
-                  <Button type="primary" className='hActButton'>{'ดูเพิ่มเติม >'}</Button>
+                <div className='actName'>
+                  {activity.name}
+                  <br />
+                  <span className='dateTime'>
+                    <CalendarOutlined /> {new Date(activity.date).toLocaleDateString('th-TH')}
+                  </span>
+                  <br />
+                  <Button type="primary" className='hActButton'>
+                    {'ดูเพิ่มเติม >'}
+                  </Button>
                 </div>
               </div>
+            );
+          })}             
             </div>
           </Col>
 
@@ -301,22 +377,24 @@ const HomePage = () => {
               | แกลอรี่
             </p>
             <div className='gallImg'>
-              <PictureOutlined className='picIcon' />
-              <div className='gallName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                รูปภาพชื่อเกี่ยวกับรูปภาพ <br />
-                <span className='gallCalendar'><CalendarOutlined /> {'<วันที่ เวลา>'}</span> </div>
+            {gallery.slice(0, 3).map((activity, index) => (
+          <div key={index} style={{ margin: '50px 10px 0 80px', display: 'flex' }}>
+            <img className='galleryImg' src={activity.imageUrl} style={{width:'10vw', height:'20vh'}} />
+            <div className='imgName'>
+              {activity.name}
+              <br />
+              <span
+                style={{
+                  fontSize: '14px',
+                  color: '#1BB39B',
+                }}
+              >
+                <CalendarOutlined /> {new Date(activity.date).toLocaleDateString('th-TH')}
+              </span>
             </div>
-            <div className='gallImg'>
-              <PictureOutlined className='picIcon' />
-              <div className='gallName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                รูปภาพชื่อเกี่ยวกับรูปภาพ <br />
-                <span className='gallCalendar'><CalendarOutlined /> {'<วันที่ เวลา>'}</span> </div>
-            </div>
-            <div className='gallImg'>
-              <PictureOutlined className='picIcon' />
-              <div className='gallName'>ชื่อเกี่ยวกับรูปภาพชื่อเกี่ยวกับ<br />
-                รูปภาพชื่อเกี่ยวกับรูปภาพ <br />
-                <span className='gallCalendar'><CalendarOutlined /> {'<วันที่ เวลา>'}</span> </div>
+            <Button className='hImgButton'>{'ดูเพิ่มเติม >'}</Button>
+          </div>
+        ))}
             </div>
           </Col>
         </Row>

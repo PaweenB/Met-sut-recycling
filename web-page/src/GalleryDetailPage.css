@@ -1,0 +1,50 @@
+.galleryDetail {
+    margin: 100px 0;
+  }
+  
+  .galleryDetailImg {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    max-height: 500px;
+  }
+  
+  .galleryDetailName, .galleryDetailDate {
+    margin-left: 79px;
+  }
+  
+  .galleryDetailName {
+    font-size: 20px;
+  }
+  
+  .galleryDetailUnderLine {
+    border-bottom: 1px solid #1BB39B;
+    margin-left: 142px;
+    margin-top: 30px;
+    width: 1145px;
+  }
+  
+  .galleryImages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  
+  .galleryImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .galleryImage {
+    width: 100%;
+    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  

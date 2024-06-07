@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
-import { PictureOutlined } from '@ant-design/icons';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from './firebase'; 
 import './CoopPage.css';
@@ -13,7 +12,7 @@ const CoopPage = () => {
   
   const settings = {
     dots: true,
-    infinite: coops.length > 1, 
+    infinite: coops.length > 1,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
@@ -26,8 +25,9 @@ const CoopPage = () => {
             ...doc.data(),
             id: doc.id
         }));
-        setCoops(newData);
-        console.log(newData);
+        const sortedData = newData.sort((a, b) => a.order - b.order);
+        setCoops(sortedData);
+        console.log(sortedData);
     } catch (e) {
         console.error("Error fetching documents: ", e);
     }

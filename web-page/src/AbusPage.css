@@ -93,10 +93,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 40vw;
+    max-height: 80vh;
+    max-width: 100vw;
     margin: 20px;
-    font-size: 80px;
+
+}
+.insideHistortImg{
+    max-height: 80vh;
 }
 
 .historyUnderline {
@@ -109,6 +112,12 @@
     border-bottom: 1px solid #1BB39B ;
     width: 417px;
     margin: 150px 250px;
+}
+
+
+.insideObjImg{
+    height: 80vh;
+    width: 40vw;
 }
 
 @media screen and (min-width: 0) and (max-width: 400px){

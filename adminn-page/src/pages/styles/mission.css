@@ -1,0 +1,62 @@
+.missionContainer {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  background-color: white;
+}
+
+.missionContent {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+}
+
+.missionUnderLine {
+  height: 1px;
+  background-color: black;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.addButton {
+  background-color: #1BB39B;
+  font-size: 16px;
+  font-weight: 700;
+  width: 50px;
+  height: 20px;
+  border-radius: 8px;
+  margin: 0 90%;
+}
+
+.tableContainer {
+  margin-top: 20px;
+}
+
+.missionTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #273B4A;
+  border-radius:8px ;
+}
+
+.tableHeader th {
+  padding: 10px;
+  text-align: left;
+}
+
+.modal{
+  text-align: center;
+  font-size: 24px; 
+}
+
+.modal-buttons button {
+  height: 57px;
+  width: 238px;
+  font-size: 14px; 
+}
+
+.modal-buttons button:hover {
+  background-color: white; 
+}
+
