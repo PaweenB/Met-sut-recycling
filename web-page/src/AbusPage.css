@@ -129,7 +129,7 @@
     .abusIcon {
         width: 100px;
         height: 100px;
-        margin: 20px 20px; 
+        margin: 0 20px; 
     }
 
     .mainWord {
@@ -151,6 +151,11 @@
     .historyImg {
         width: 90vw;
         height: 40vh;
+    }
+
+    .insideHistortImg{
+        height: 40vh;
+        width: 90vw;
     }
 
     .subHistory {
@@ -198,7 +203,12 @@
     .pictureAbus {
         font-size: 50px;
         margin: 20px 0  ;
-        height: 50vh;
+        height: 40vh;
+        width: 100vw;
+    }
+
+    .insideObjImg{
+        height: 40vh;
         width: 100vw;
     }
 
@@ -224,7 +234,13 @@
     }
     
     .historyImg {
-        width: 95vw;
+        width: 60vw;
+        height: 40vh;
+        margin: 0 150px 50px;
+    }
+
+    .insideHistortImg{
+        width: 60vw;
         height: 40vh;
     }
 
@@ -254,6 +270,11 @@
     .goalUnderline {
         margin: 50px 150px;
         width: 200px;
+    }
+
+    .insideObjImg{
+        height: 40vh;
+        width: 50vh;
     }
 
 }

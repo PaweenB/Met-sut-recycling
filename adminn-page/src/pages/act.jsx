@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Sidebar from '../components/NavigationMenu';
 import { DeleteOutlined, EditOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
-import { db, storage } from '../firebase';
+import { db } from '../firebase';
 import './styles/act.css';
-import { onSnapshot, collection, deleteDoc, doc, updateDoc, getDoc } from 'firebase/firestore';
+import { onSnapshot, collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 import Button from '@mui/material/Button';
@@ -13,7 +13,6 @@ import Box from '@mui/material/Box';
 
 const Act = () => {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
   const [activities, setActivities] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteActivityId, setDeleteActivityId] = useState(null);
@@ -125,17 +124,20 @@ const Act = () => {
             </tbody>
           </table>
         </div>
-
+        {showDeleteModal && (
         <Modal open={showDeleteModal} onClose={closeDeleteModal}>
-          <Box className="deleteModal">
-            <h2>ยืนยันการลบกิจกรรม</h2>
-            <p>คุณต้องการลบ "{deleteActivityName}" หรือไม่?</p>
-            <div className="deleteModalButtons">
-              <Button variant="contained" color="error" onClick={() => handleDelete(deleteActivityId)}>ลบ</Button>
-              <Button variant="contained" onClick={closeDeleteModal}>ยกเลิก</Button>
+          <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, textAlign: 'center' }}>
+            <p style={{ color: 'red', fontSize: 24 }}>ยืนยันการลบข้อมูล</p>
+            <div className="mainUnderLine"/>
+            <p>คุณต้องการลบกิจกรรม "{deleteActivityName}" ใช่หรือไม่?</p>
+            <div className="modal-buttons">
+              <br/>
+              <Button onClick={() => handleDelete(deleteActivityId)} variant="contained" color="error">ยืนยัน</Button>
+              <Button onClick={closeDeleteModal} variant="contained" sx={{background:'white', color:'#7F8698'}}>ยกเลิก</Button>
             </div>
           </Box>
         </Modal>
+      )}
       </div>
     </div>
   );

@@ -80,5 +80,51 @@
     margin-top: 20px;
   }
 
+  
+  .deleteModal {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    background: none; 
+    background-color: white;
+  }
+  
+  .deleteModalContent {
+    background-color: white; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .deleteModalButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .deleteModalButtons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deleteModalButtons button:first-child {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .deleteModalButtons button:last-child {
+    background-color: #ddd;
+    color: #333;
+  }
+
 
   

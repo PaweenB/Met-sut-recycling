@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Button } from 'antd';
 import { PictureOutlined, PlayCircleOutlined, CalendarOutlined } from '@ant-design/icons';
 import './HomePage.css';
@@ -17,6 +18,7 @@ const HomePage = () => {
   const [activities, setActivities] = useState([]);
   const [gallery, setGallery] = useState([]);
   const [uploadedImages, setUploadedImages] = useState([]);
+  const navigate = useNavigate();
   const [aboutData, setAboutData] = useState({
       logoURL: '',
       orgNameEn: '',
@@ -28,6 +30,20 @@ const HomePage = () => {
       objective: '',
     });
 
+    const [exampleData, setExampleData] = useState({});
+  
+    useEffect(() => {
+      const unsubscribe = onSnapshot(doc(db, 'examples', 'new-example-id'), (doc) => {
+        if (doc.exists()) {
+          setExampleData(doc.data());
+        } else {
+          console.log("No such document!");
+        }
+      });
+  
+      return () => unsubscribe();
+    }, []);
+  
   const fetchCoops = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "coops"));
@@ -143,6 +159,18 @@ const HomePage = () => {
     fetchGallery();
   }, []);
 
+  const handleStaffMoreClick = (id) => {
+    navigate(`/staff/${id}`);
+  };
+
+  const handleActMoreClick = (id) => {
+    navigate(`/activity/${id}`);
+  };
+
+  const handleGalleryMoreClick = (id) => {
+    navigate(`/gallery/${id}`);
+  }
+
   return (
     <div className='HomeContent'>
       <Row>
@@ -158,15 +186,26 @@ const HomePage = () => {
         </Col>
       </Row>
       <div>
-        <p className='orgHeadWord'> องค์กรที่เกี่ยวข้อง หรือผู้สนับสนุนโครงการ
+        <Row>
+          <Col lg={6}>
+          <div className='imgExample'>
+              <img className='examplePic' src={exampleData.image1URL} />
+              <p className='exampleText'>{exampleData.title }</p>
+              <img className='examplePic' src={exampleData.image2URL } />
+              <p className='exampleText'>{exampleData.title2 }</p>
+              <img className='examplePic' src={exampleData.image3URL } />
+              <p className='exampleText'>{exampleData.title3 }</p>
+            </div>
+          </Col>
+          <Col lg={18}>
+          <p className='orgHeadWord'> องค์กรที่เกี่ยวข้อง หรือผู้สนับสนุนโครงการ
           <div className='headUnderLine'></div>
         </p>
-
         <div className='pcRow'>
           <Row style={{ textAlign: 'center', width: '100%' }}>
             {coops.slice(0, 3).map((coop, index) => (
               <Col span={8} key={index}>
-                <div className="container">
+                <div className="coopContainer">
                   <div className="iconContainer">
                   {coop.imageUrl && <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} />}
                   </div>
@@ -180,7 +219,7 @@ const HomePage = () => {
             ))}
           </Row>
         </div>
-
+            
         <div className="carousel-container">
           <Slider dots={true} infinite={coops.length > 1} speed={500} slidesToShow={1} slidesToScroll={1}>
             {coops.map((coop, index) => (
@@ -188,9 +227,7 @@ const HomePage = () => {
                 <Row className='coopRow1'>
                   <Col span={24}>
                     <div className="container">
-                      <div className="iconContainer3">
                         {coop.imageUrl && <img src={coop.imageUrl} className="hCoopImage" alt={coop.name} />}
-                      </div>
                       <div className='organized'>
                         <div className="coopData">
                           <p>{coop.name}</p>
@@ -204,6 +241,10 @@ const HomePage = () => {
             ))}
           </Slider>
         </div>  
+
+          </Col>
+        </Row>
+        
 
         <Row style={{ margin: '90px 0' }}>
           <Col span={2}></Col>
@@ -240,7 +281,7 @@ const HomePage = () => {
                   </div>
                   <div className='staffName'>
                     <div className="staffData">
-                      <p>{staff.name}</p>
+                      <p>{`${staff.prefix} ${staff.firstName} ${staff.lastName}`}</p>
                     </div>
                   </div>
                   <div className='hStaffDesc' style={{fontWeight:'bold'}}>
@@ -250,7 +291,7 @@ const HomePage = () => {
                     <p>{staff.subDesc}</p>
                   </div>
                   <div>
-                  <Button type="primary" className='hStaffButton'>{'ดูเพิ่มเติม >'}</Button>
+                  <Button type="primary" className='hStaffButton' onClick={() => handleStaffMoreClick(staff.id)}>{'ดูเพิ่มเติม >'}</Button>
                   </div>
                 
                 </div>
@@ -266,12 +307,10 @@ const HomePage = () => {
                 <Row className="staffRow">
                   <Col span={24} className="staffCol">
                     <div className="container">
-                      <div className="iconContainer4">
                         {staff.imageUrl ? <img src={staff.imageUrl} className="hStaffImg" alt={staff.name} /> : <PictureOutlined />}
-                      </div>
                       <div className="staffName">
                         <div className="staffData">
-                          <p>{staff.name}</p>
+                          <p>{`${staff.prefix} ${staff.firstName} ${staff.lastName}`}</p>
                         </div>
                       </div>
                       <div className="staffDesc">
@@ -281,7 +320,7 @@ const HomePage = () => {
                         <p>{staff.subDesc}</p>
                       </div>
                     </div>
-                    <Button type="primary" className="hStaffButton">ดูเพิ่มเติม &gt;</Button>
+                    <Button type="primary" className="hStaffButton"  onClick={() => handleStaffMoreClick(staff.id)}>ดูเพิ่มเติม &gt;</Button>
                   </Col>
                 </Row>
               </div>
@@ -330,7 +369,7 @@ const HomePage = () => {
                     <CalendarOutlined /> {new Date(activity.date).toLocaleDateString('th-TH')}
                   </span>
                   <br />
-                  <Button type="primary" className='hActButton'>
+                  <Button type="primary" className='hActButton' onClick={() => handleActMoreClick(activity.id)}>
                     {'ดูเพิ่มเติม >'}
                   </Button>
                 </div>
@@ -379,7 +418,7 @@ const HomePage = () => {
             <div className='gallImg'>
             {gallery.slice(0, 3).map((activity, index) => (
           <div key={index} style={{ margin: '50px 10px 0 80px', display: 'flex' }}>
-            <img className='galleryImg' src={activity.imageUrl} style={{width:'10vw', height:'20vh'}} />
+            <img className='hGalleryImg' src={activity.imageUrl}  />
             <div className='imgName'>
               {activity.name}
               <br />
@@ -392,7 +431,7 @@ const HomePage = () => {
                 <CalendarOutlined /> {new Date(activity.date).toLocaleDateString('th-TH')}
               </span>
             </div>
-            <Button className='hImgButton'>{'ดูเพิ่มเติม >'}</Button>
+            <Button className='hImgButton' onClick={() => handleGalleryMoreClick(activity.id)}>{'ดูเพิ่มเติม >'}</Button>
           </div>
         ))}
             </div>

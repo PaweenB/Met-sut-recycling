@@ -4,6 +4,11 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
   font-family: 'Bai Jamjuree', sans-serif !important;
 }
 
+.logo-image{
+  max-width: 45px;
+  max-height: 50px;
+}
+
 .Header {
   display: flex;
   align-items: center;
@@ -15,12 +20,12 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
 .logo {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
 .firstWord {
   color: black;
-  background-color: white;
-  margin: 0 20px;
+  margin: 0 51px 0 51px;
 }
 
 .mobile-menu-button {
@@ -43,6 +48,17 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
   padding: 10px 43px;
   border-right: 1px solid white;
   font-size: 16px;
+  margin: 0 15px 0 0;
+}
+
+.homeIcon{
+  color: green !important;
+  font-size: 30px !important;
+  background-color: black;
+}
+
+.menuItem {
+  color: white !important;
 }
 
 .content-container {
@@ -95,13 +111,16 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
  
   .desktop-menu {
     display: none;
+    
   }
 
   .mobile-menu-button {
     display: block;
     margin-left: auto;
     background-color: white;
+    
   }
+
   .Menu .ant-menu-item {
     padding: 6px;
     font-size: 7px;
@@ -111,7 +130,20 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
   .Menu {
     font-size: 3px;
     background-color: white;
+    
   }
+
+  .homeIcon{
+    color: green !important;
+    background-color: white ;
+    
+  }
+  
+  .menuItem {
+    color: black !important;
+    
+  }
+
   .footerHead {
     margin: 70px 20px 0;
   }
@@ -128,6 +160,10 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, 
   .content-container[data-page="Coop"] {
     height: 130vh;
   }
+  .content-container.staff-detail-page {
+    height: 90vh; 
+  }
+
 }
 
 @media screen and (min-width: 401px) and (max-width: 770px) {

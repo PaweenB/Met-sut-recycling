@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
-import { PictureOutlined, PlayCircleOutlined } from '@ant-design/icons';
-import { db } from './firebase'; // Make sure to adjust the path if necessary
+import { db } from './firebase'; 
 import { getDoc, doc } from 'firebase/firestore';
 import './AbusPage.css';
 

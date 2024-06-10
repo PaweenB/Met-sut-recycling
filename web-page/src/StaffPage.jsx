@@ -28,7 +28,7 @@ const StaffPage = () => {
         ...doc.data(),
         id: doc.id
       }));
-      const sortedData = newData.sort((a, b) => a.order - b.order); // Sort by order field
+      const sortedData = newData.sort((a, b) => a.order - b.order); 
       setStaffs(sortedData);
       console.log(sortedData);
     } catch (e) {
@@ -98,7 +98,8 @@ const StaffPage = () => {
                     <div className='staffRole'>
                       <p>{staff.subDesc}</p>
                     </div>
-                    <Button type="primary" className='staffButton' onClick={() => handleMoreClick(staff.id)}>{'ดูเพิ่มเติม >'}</Button>
+                    <br/>
+                    <Button type="primary" className='sStaffButton' onClick={() => handleMoreClick(staff.id)}>{'ดูเพิ่มเติม >'}</Button>
                   </div>
                 </Col>
               </Row>

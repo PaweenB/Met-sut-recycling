@@ -19,3 +19,20 @@ p {
     color: #1BB39B;
 }
 
+@media screen and (max-width: 400px){
+    
+    .staffDetailImg{
+        margin-top: 50px;
+    }
+    
+}
+
+@media screen and (min-width: 401px) and (max-width: 770px) {
+    .staffDetailImg {
+        margin: 30px 210px;
+    }
+
+    .staffDetailName,.staffDetailDesc {
+        margin-left: 20px;
+    }
+}

@@ -176,17 +176,6 @@ const About = () => {
             </div>  
           </div>
         </div>
-
-        {videoURL && (
-          <div className='videoSection'>
-            <label htmlFor='videoPlayer' className="uploadLabel">วิดีโอประกอบ</label>
-            <video controls className='videoPlayer'>
-              <source src={videoURL} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
-
         <div className='abSubmitButtonContainer'>
           <Button className='abSubmitButton' onClick={handleSubmit}>บันทึก</Button>
         </div>

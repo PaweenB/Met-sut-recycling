@@ -67,10 +67,9 @@
         font-size: 25px;
     }
     
-    .galleryImg {
-        margin:  2px -60px;
-        padding: 50px;
-    }
+    .hGalleryImg {
+        width: 30vw;
+    }   
 
     .imgName {
         margin: 0 70px;
@@ -81,6 +80,10 @@
     .imgButton {
         margin-left: 80px;
         margin: 190px 0 0 -200px;
+    }
+
+    .imgButton{
+        margin: 100px 0 0 -280px ;
     }
     
 }

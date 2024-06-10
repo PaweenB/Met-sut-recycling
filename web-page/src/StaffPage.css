@@ -49,22 +49,18 @@
 
 @media screen and (min-width: 401px) and (max-width: 770px){
     .iconContainer4 {
-        margin: 0 -60px;
-        width: 200px;
-        height: 200px;
+        margin: 0 180px;
+ 
     }
 
-    .staffImg{
-        width: 200px;
-        height: 200px;
-    }
+
 
     .staffDesc {
         margin: 0 -40px -20px;
     }
 
-    .staffButton{
-        margin: 0 -40px;
+    .sStaffButton{
+        margin: 30px -40px;
     }
 
 }

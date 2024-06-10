@@ -64,7 +64,7 @@ const GalleryDetailPage = () => {
       </div>
       <div className='galleryDetailUnderLine'></div>
       <Row>
-        <Col lg={10}>
+        <Col lg={10} sm={24}>
           <div className="galleryImages">
             {images.map((image, index) => (
               <div key={index} className="galleryImageContainer">
@@ -73,7 +73,7 @@ const GalleryDetailPage = () => {
             ))}
           </div>
         </Col>
-        <Col lg={14} style={{ paddingLeft: '50px' }}>
+        <Col lg={14} sm={24} style={{ paddingLeft: '50px' }}>
           <img src={gallery.imageUrl} className="galleryDetailImg" alt={gallery.name} />
         </Col>
       </Row>

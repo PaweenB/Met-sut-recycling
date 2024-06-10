@@ -33,6 +33,7 @@
 .mainExample {
   color: #7F8698;
   font-size: 20px;
+  margin-left: 20px;
 }
 
 .imgExample {
@@ -51,6 +52,7 @@
 .exampleText {
   font-size: 16px;
   font-weight: 700;
+  color: white;
 }
 
 .mainNumber {
@@ -110,3 +112,15 @@
   display: none;
 }
 
+@media (max-width: 400px) {
+  .imgExample {
+    width: 150%;
+    margin-left: 23px;
+  }
+
+  .examplePic{
+    height: 50px;
+    width: 50px;
+  }
+
+}

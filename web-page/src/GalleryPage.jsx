@@ -21,7 +21,6 @@ const GalleryPage = () => {
             return { id: doc.id, ...data, imageUrl };
           }));
 
-          // Sort the gallery items by order
           imageData.sort((a, b) => a.order - b.order);
           
           setGallery(imageData);
@@ -56,7 +55,7 @@ const GalleryPage = () => {
         </p>
         {gallery.map((activity, index) => (
           <div key={index} style={{ margin: '50px 10px 0 80px', display: 'flex' }}>
-            <img className='galleryImg' src={activity.imageUrl} alt={activity.name} />
+            <img className='hGalleryImg' src={activity.imageUrl} alt={activity.name} />
             <div className='imgName'>
               {activity.name}
               <br />

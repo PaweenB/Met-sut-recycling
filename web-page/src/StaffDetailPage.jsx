@@ -53,7 +53,7 @@ const StaffDetailPage = () => {
         <Col lg={16}>
             <p className='staffDetailName'>{`${staff.prefix} ${staff.firstName} ${staff.lastName}`}</p>
             <p className='staffDetailDesc'>{staff.desc}</p> 
-            <p>{staff.subDesc}</p> 
+            <p className='staffDetailDesc'>{staff.subDesc}</p> 
             <div style={{ borderBottom: '1px solid #1BB39B', width: '532px', margin: '10px 0' }}></div>
         </Col>
       </Row>

@@ -15,7 +15,7 @@ const MissionPage = () => {
         ...doc.data(), 
         id: doc.id
       })); 
-      missionsData.sort((a, b) => a.order - b.order); // Sort missions by order
+      missionsData.sort((a, b) => a.order - b.order);
       setMissionList(missionsData); 
     };
 

@@ -95,7 +95,7 @@ function Main() {
         <p className="mainHead">จัดการข้อมูลหน้าหลัก</p>
         <div className="mainUnderLine"></div>
         <Row>
-          <Col lg={8}>
+          <Col sm={24} lg={8}>
             <p className='mainExample'>ตัวอย่างการแสดงผล</p>
             <div className='imgExample'>
               <img className='examplePic' src={exampleData.image1URL} />
@@ -106,7 +106,7 @@ function Main() {
               <p className='exampleText'>{exampleData.title3 }</p>
             </div>
           </Col>
-          <Col lg={16}>
+          <Col sm={24} lg={16}>
             <div style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
               <div className="contentLine" />
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingLeft: '16px', width: '100%' }}>
@@ -129,7 +129,7 @@ function Main() {
                       <img src={image1Preview}  className="imagePreview" />
                     ) : null}
                   </div>
-                  <form style={{ marginLeft: '60px' }}>
+                  <form style={{ marginLeft: '60px' }} className='mainForm'>
                     <label htmlFor="titleInput1" className='mainInputHead'>ชื่อหัวข้อ:</label>
                     <input type="text" id="titleInput1" name="titleInput1" value={title1} onChange={(e) => setTitle1(e.target.value)} style={{ width: '200%', height: '35px', backgroundColor: 'white', color: 'black' }} />
                   </form>

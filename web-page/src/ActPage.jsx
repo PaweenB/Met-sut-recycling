@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
-import { db } from './firebase';
+import { db } from './firebase'; 
 import { onSnapshot, collection, doc, getDoc } from 'firebase/firestore';
 import './ActPage.css';
 
@@ -15,7 +15,6 @@ const ActPage = () => {
       try {
         const unsubscribe = onSnapshot(collection(db, 'activities'), (snapshot) => {
           const activitiesData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          // Sort the activities by the order field
           const sortedActivities = activitiesData.sort((a, b) => a.order - b.order);
           setActivities(sortedActivities);
         });
@@ -54,7 +53,7 @@ const ActPage = () => {
   };
 
   return (
-    <div style={{ margin: '120px 0', width: '100vw' }}>
+    <div style={{ margin: '180px 0', width: '100vw' }}>
       <div className='actFirst'>
         กิจกรรมทางวิชาการ
         <div style={{ borderBottom: '4px solid #1BB39B', width: '80px', margin: '10px 0' }}></div>

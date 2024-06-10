@@ -13,6 +13,7 @@ function Coop() {
     const [coops, setCoops] = useState([]);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [deleteCoopId, setDeleteCoopId] = useState(null);
+    const [deleteCoopName, setDeleteCoopName] = useState(null);
     const navigate = useNavigate(); 
 
     const addCoop = () => {
@@ -23,14 +24,16 @@ function Coop() {
         navigate(`/coops/edit/${id}`);
     };
 
-    const openDeleteModal = (id) => {
+    const openDeleteModal = (id, name) => {
         setDeleteModalOpen(true);
         setDeleteCoopId(id);
+        setDeleteCoopName(name);
     };
     
     const closeDeleteModal = () => {
         setDeleteModalOpen(false);
         setDeleteCoopId(null);
+        setDeleteCoopName(null);
     };
 
     useEffect(() => {
@@ -115,7 +118,7 @@ function Coop() {
                                     <td>{coop.name}</td>
                                     <td>
                                         <button style={{ color: '#33363F', backgroundColor: 'white' }} onClick={() => editCoop(coop.id)}><EditOutlined /></button>
-                                        <button style={{ color: 'red', backgroundColor: 'white' }} onClick={() => openDeleteModal(coop.id)}><DeleteOutlined /></button>
+                                        <button style={{ color: 'red', backgroundColor: 'white' }} onClick={() => openDeleteModal(coop.id, coop.name)}><DeleteOutlined /></button>
                                     </td>
                                 </tr>
                             ))}
@@ -128,7 +131,7 @@ function Coop() {
                     <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, textAlign: 'center' }}>
                         <p style={{ color: 'red', fontSize: 24 }}>ยืนยันการลบข้อมูล</p>
                         <div className="missionUnderLine"/>
-                        <p>คุณต้องการลบข้อมูลใช่หรือไม่?</p>
+                        <p>คุณต้องการลบข้อมูล "{deleteCoopName}" ใช่หรือไม่?</p>
                         <div className="deleteModalButtons">
                             <Button onClick={() => handleDeleteConfirmation(true)} variant="contained" color="error">ยืนยัน</Button>
                             <Button onClick={() => handleDeleteConfirmation(false)} variant="contained" sx={{marginLeft:'200px', background:'white', color:'#7F8698'}}>ยกเลิก</Button>

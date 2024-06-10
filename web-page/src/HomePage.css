@@ -93,8 +93,36 @@
     margin: -5px 0;
   }
 
+  .mainExample {
+    color: #7F8698;
+    font-size: 20px;
+  }
+  
+  .imgExample {
+    background-color: #1BB39B;
+    justify-items: center;
+    width: 80%;
+    display: grid;
+    margin-left: 20px;
+    margin-top: -50px;
+  }
+  
+  .examplePic {
+    margin-top: 60px;
+    height: 75px;
+    width: 75px;
+  }
+  
+  .exampleText {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+  
+
   .hCoopData {
     width: 120%;
+    margin: 0 -60px;
   }
 
   .hCoopImage{
@@ -222,9 +250,6 @@
     margin: 20px 0;
   }
   
-  .homeWork{
-    margin-left: -80px;
-  }
 
   .calendar {
     margin: 50px 10px 0 80px;
@@ -242,7 +267,9 @@
     margin: 120px 0 0 -112px;
   }
 
-
+  .hGalleryImg{
+    width: 10vw;
+  }
 
 
   @media screen and (max-width: 400px){
@@ -272,9 +299,22 @@
       margin: 0 -80px;
     }
 
+    .imgExample{
+      margin: 10px 25px -30px  ;
+      width: 150%;
+      height: fit-content;
+    }
+
+    .examplePic{
+      width: 10vw;
+      height: 5vh;
+      margin: 20px 0 0 0;
+    }
+
     .hCoopImage {
       height: 200px;
       width: 200px;
+      margin: 0 -60px;
     }
 
     .orgHeadWord {
@@ -282,8 +322,8 @@
     }
 
     .organized {
-      width: 100%;
-      margin: 50px 0 -60px;
+      width: 250%;
+      margin: 50px -70px -70px;
       text-align: center;
     }
 
@@ -355,7 +395,7 @@
 
     .hStaffButton {
       padding:10px 10px 25px ;
-      margin: 0 90px ;
+      margin: 50px 90px ;
       font-size: 10px;
     }
 
@@ -392,9 +432,18 @@
     .actHead, .workHead, .homeGallHead {
       margin: 10px 0 0 20px; 
     }
+
+    .hGalleryImg{
+      margin: 0 -60px;
+    }
   
     .homeDate, .calendar, .gallImg {
       margin: 20px 30px ;
+    }
+
+    .hDateMonth{
+      margin-left: -60px;
+      margin-right: 50px;
     }
   
     .date {
@@ -409,17 +458,21 @@
     }
     
     .gallImg {
-      margin-top: 60px;
+    margin-left: 0px;
     } 
+
   }  
 
   @media screen and (min-width: 401px) and (max-width: 770px){
 
+    .imgExample{
+      margin: 10px 100px -30px  ;
+      width: 150%;
+      height: fit-content;
+    }
+
     .organized {
       font-size: 19px;
-      position:initial;
-      margin: 0 -30px;
-      width: 150%;
     }
 
     .iconContainer {
@@ -430,8 +483,9 @@
     }
 
     .hCoopImage{
-      height: 175px;
-      width: 175px;
+      height: 300px;
+      width: 300px;
+      margin: 0 100px;
     }
 
     .containerUnderline2 {
@@ -455,6 +509,10 @@
 
     .overlayButton {
       margin: 0 -80px;
+    }
+
+    .pcRow{
+      display: none;
     }
 
     .servicesOverlay {
@@ -481,8 +539,9 @@
     }
 
     .hStaffImg{
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
+      margin: 0 150px;
     }
 
     .staffName {
@@ -492,21 +551,25 @@
     }
     
      .staffRole,.hStaffDesc {
-      margin: 0 -40px -20px;
+      margin: 0 -40px -60px;
     }
 
     .hStaffButton{
-      margin: 10px -40px;
+      margin-left: 50px;
+      margin-top: -150px;
+      margin-bottom: 40px;
     }
 
     .containerUnderline2 {
       width: 300px;
       margin: 50px 0 50px 200px;
+      
     }
 
     .playCircle {
       width: 119%;
       height: 50vh;
+      margin-top: 60px;
     }
 
     .abUsHeadWord {
@@ -519,6 +582,10 @@
 
     .abUsButton {
       margin: 0 50px;
+    }
+
+    .hGalleryImg{
+      width: 40vw;
     }
 
   } 
