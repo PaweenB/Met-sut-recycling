@@ -40,7 +40,7 @@ const MainLayout = ({ children, locations }) => {
     <Layout className='HomePage' style={{ width: '100vw' }}>
       <Header className='Header' style={{ position: 'fixed', zIndex: '1000', width: '100%' }}>
         <div className="logo">
-          <img src="/images/cat1.jpg" className="logo-image"  />
+          <img src="/images/image11.png" className="logo-image"  />
           <div className='firstWord'>
             ศูนย์วิจัยนวัตกรรมการผลิตและรีไซเคิลโลหะ
           </div>
